@@ -34,11 +34,15 @@ export default function TodoApp() {
 
   function handleUpdate(id, value) {
 
-    const temp = [...todos];
-    const item = temp.find((item) => item.id === id);
-    item.title = value;
-    setTodos(temp);
+    // const temp = [...todos];
+    // const item = temp.find((item) => item.id === id);
+    // item.title = value;
+    setTodos((prev) => prev.map((i) => i.id === id ? ({...i, title:value}) : i));
+
+
   }
+
+
 
   function handleDelete(id, value) {
 
